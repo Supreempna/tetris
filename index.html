@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>俄罗斯方块 Tetris</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div style="display:flex; flex-direction:column; align-items:center;">
+  <div class="game-container">
+    <div class="board-wrapper" id="boardWrapper">
+      <canvas id="boardCanvas"></canvas>
+      <div class="game-overlay hidden" id="pauseOverlay">
+        <div class="title">暂停中</div>
+        <div class="subtitle">按 P 继续</div>
+      </div>
+      <div class="game-overlay hidden" id="gameOverOverlay">
+        <div class="title">游戏结束</div>
+        <div class="subtitle" id="finalScore"></div>
+        <div class="subtitle" style="margin-top:4px">按 R 重新开始</div>
+      </div>
+    </div>
+
+    <div class="info-panel">
+      <div class="info-box">
+        <h3>NEXT</h3>
+        <canvas class="preview-canvas" id="previewCanvas" width="120" height="120"></canvas>
+      </div>
+      <div class="info-box">
+        <h3>分数</h3>
+        <div class="value" id="scoreVal">0</div>
+      </div>
+      <div class="info-box">
+        <h3>等级</h3>
+        <div class="value" id="levelVal">1</div>
+      </div>
+      <div class="info-box">
+        <h3>消行</h3>
+        <div class="value" id="linesVal">0</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls-bar" id="controlsBar">
+    <button class="ctrl-btn" id="btnLeft">◀</button>
+    <button class="ctrl-btn" id="btnRotate">↻</button>
+    <button class="ctrl-btn" id="btnRight">▶</button>
+    <button class="ctrl-btn drop-btn" id="btnDrop">⏬</button>
+  </div>
+
+  <div class="controls-hint" id="controlsHint">
+    ← → 移动 &nbsp;|&nbsp; ↑ 旋转 &nbsp;|&nbsp; ↓ 软降 &nbsp;|&nbsp; 空格 硬降 &nbsp;|&nbsp; P 暂停 &nbsp;|&nbsp; R 重来
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
